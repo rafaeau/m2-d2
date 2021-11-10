@@ -18,7 +18,7 @@ Append the list items in the unordered list;
 
 Append the unordered list in the document. The list should appear in the page:*/
 
-let cycleArray = function () {
+const cycleArray = function () {
     for (let i=0; i<genres.length; i++){
         let genre = genres[i]
         let listItem = document.createElement("li")
@@ -29,5 +29,12 @@ let cycleArray = function () {
 }
 
 window.onload = function () {
-    cycleArray()
+    cycleArray();
+    albumCount();
+}
+
+const albumCount = function () {
+    let albums = document.querySelectorAll("div .card")
+    let count = document.querySelector("#album-count")
+    count.innerHTML = albums.length
 }
